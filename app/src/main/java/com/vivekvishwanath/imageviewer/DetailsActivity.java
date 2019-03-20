@@ -27,8 +27,15 @@ public class DetailsActivity extends AppCompatActivity {
         Intent imageIntent = getIntent();
         final ImageData IMAGE_DATA = (ImageData) imageIntent.getSerializableExtra("image");
 
-        imageNameView.setText(IMAGE_DATA.getImageName());
-        imageUriView.setText(IMAGE_DATA.getUri().toString());
+        imageNameView.setText("Name - " + IMAGE_DATA.getImageName());
+        imageNameView.setTextSize(20);
+        imageNameView.setPadding(10,10,10,10);
+        imageNameView.setTextColor(getResources().getColor(android.R.color.black));
+
+        imageUriView.setText("Image URI - " + IMAGE_DATA.getUri().toString());
+        imageUriView.setTextSize(20);
+        imageUriView.setPadding(10,10,10,10);
+        imageUriView.setTextColor(getResources().getColor(android.R.color.black));
 
         selectedImageView.setImageURI(IMAGE_DATA.getUri());
         selectedImageView.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +59,29 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.i("ActivityLifeCycle", getLocalClassName() + " - onResume");
+
+        Intent imageIntent = getIntent();
+        final ImageData IMAGE_DATA = (ImageData) imageIntent.getSerializableExtra("image");
+
+        imageNameView.setText("Name - " + IMAGE_DATA.getImageName());
+        imageNameView.setTextSize(20);
+        imageNameView.setPadding(10,10,10,10);
+        imageNameView.setTextColor(getResources().getColor(android.R.color.black));
+
+        imageUriView.setText("Image URI - " + IMAGE_DATA.getUri().toString());
+        imageUriView.setTextSize(20);
+        imageUriView.setPadding(10,10,10,10);
+        imageUriView.setTextColor(getResources().getColor(android.R.color.black));
+
+        selectedImageView.setImageURI(IMAGE_DATA.getUri());
+        selectedImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent fullscreenIntent = new Intent(getApplicationContext(), FullscreenImageActivity.class);
+                fullscreenIntent.putExtra("fullscreen", IMAGE_DATA.getUri().toString());
+                startActivity(fullscreenIntent);
+            }
+        });
     }
 
     @Override

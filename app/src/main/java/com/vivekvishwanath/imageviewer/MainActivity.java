@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         textView.setPadding(10,10,10,10);
         textView.setTextColor(getResources().getColor(android.R.color.black));
         textView.setTextSize(20);
+        textView.setPadding(10,10,10,10);
         textView.setText(imageText);
         textView.setWidth(ViewGroup.LayoutParams.FILL_PARENT);
         textView.setOnClickListener(new View.OnClickListener() {

@@ -7,11 +7,22 @@
     android:orientation="vertical"
     tools:context=".DetailsActivity">
 
+    <TextView
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Image Details"
+        android:textSize="26sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
     <ImageView
         android:id="@+id/selected_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:padding="10dp"
         />
 
     <TextView
@@ -19,6 +30,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
+        android:padding="10dp"
         />
 
     <TextView
@@ -26,6 +38,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
+        android:padding="10dp"
         />
 
 </LinearLayout>
